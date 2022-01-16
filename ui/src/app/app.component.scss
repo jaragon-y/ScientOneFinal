@@ -1,0 +1,179 @@
+.profile{
+    padding-left: 30px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.font{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    letter-spacing: 4.6px;
+    word-spacing: -5px;
+    color: #000000;
+    text-decoration: rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: small-caps;    
+    text-align: center;
+}
+
+.title-font {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.label-font {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.data-font {
+    font-size: 15px;
+    font-weight: 500;
+}
+.arrow {
+    text-align: center;
+    margin: 1% 0;
+}
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+a{
+    text-decoration: none;
+}
+.bar{
+    display: flex;
+    justify-content: center;
+}
+
+.progress {
+  background: rgba(255, 255, 255, 0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+}
+
+.progress-value {
+  animation: load 5s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.search{
+    position: absolute;
+    top: 367px;
+    left: 50%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    transform: translate(-50%,-50%);
+    background: #2f3640;
+}
+.btn{
+    border-radius:50%;
+    border-color: #2f3640;
+    background: #2f3640;
+    color: #2471A3;
+    float: right;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.text{
+    border:none;
+    background: none;
+    outline: none;
+    float: left;
+    padding:0;
+    color: #fff;
+    font-size:16px;
+    transition: 0.6s;
+    line-height: 40px;
+    width: 0px;
+}
+::placeholder{
+    padding-left:15px;
+    color: #ddd;
+}
+.search:hover> .text{
+    width: 350px;
+    padding: 0 5px;
+    transition: 0.4s;
+}
+@media(max-width: 841px){
+    .search:hover> .text{
+        width: 300px;
+    }
+}
+@media(max-width: 740px){
+    .search:hover> .text{
+        width: 250px;
+    }
+}
+@media(max-width: 640px){
+    .search:hover> .text{
+        width: 200px;
+    }
+}
+@media(max-width: 540px){
+    .search:hover> .text{
+        width: 160px;
+    }
+    .text{
+        line-height: 30px;
+    }
+    .search{
+        height: 30px;
+    }
+    .btn{
+        width: 30px;
+        height: 30px;
+    }
+}
+@media(max-width: 461px){
+    .search:hover> .text{
+        width: 140px;
+    }
+}
+@media(max-width: 401px){
+    .search:hover> .text{
+        width: 110px;
+    }
+}

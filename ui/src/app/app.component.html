@@ -1,0 +1,158 @@
+<div class="row">
+  <div class="col-md-4 logo">
+    <img src="../assets/logo.png" height="50%">
+  </div>
+  <div class="col-md-4 font title-font">
+    <span>Creador de Perfiles</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 font label-font">    
+    <label>
+      Ingrese el perfil de un usuario de Linkedin
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="arrow bounce">
+      <i class="fa fa-arrow-down fa-2x"></i>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">    
+    <div class="search">
+      <input [(ngModel)]="url" type="text" placeholder="Ingrese la URL" class="text" name="url">
+      <a type="button" class="btn" (click)="buscar()"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="searching">
+  <div class="col-md-12 bar">    
+    <div class="progress">
+      <div class="progress-value"></div>
+    </div>
+  </div>
+</div>
+<div class="profile" *ngIf="found">
+  <div class="row">
+    <div class="col-md-4"> 
+      <div class="row">
+        <div class="col-md-12">
+          <label class="font label-font">Foto</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">     
+          <img src="{{persona.foto}}" height=150px>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">    
+      <div class="row">
+        <div class="col-md-12">
+          <label class="font label-font">Datos</label>
+        </div>
+      </div>
+      <div class="light-row">
+        <div class="col-md-12">          
+          <label class="font data-font">Nombres: {{persona.nombres}}</label>
+        </div>
+      </div>
+      <div class="light-row">
+        <div class="col-md-12">          
+          <label class="font data-font">Apellidos: {{persona.apellidos}}</label>
+        </div>
+      </div>
+      <div class="light-row">
+        <div class="col-md-12">          
+          <label class="font data-font">Direccion: {{persona.direccion}}</label>
+        </div>
+      </div>
+      <div class="light-row">
+        <div class="col-md-12">          
+          <label class="font data-font">Correo: {{persona.correo}}</label>
+        </div>
+      </div>
+      <div class="light-row">
+        <div class="col-md-12">          
+          <label class="font data-font">Edad: {{persona.edad}}</label>
+        </div>
+      </div>
+    </div>
+    <!-- ng if familiares.size()>0-->
+    <div class="col-md-4" *ngIf="persona.familiares!.length > 0">    
+      <div class="row">
+        <div class="col-md-12">
+          <label class="font label-font">Posibles familiares</label>
+        </div>
+      </div>
+      <ng-container *ngFor="let familiar of persona.familiares">
+        <div class="light-row">
+          <div class="col-md-12">
+            <label class="font data-font">{{familiar}}</label>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" *ngIf="persona.trabajos!.length > 0">    
+      <div class="row">
+        <div class="col-md-12">
+          <label class="font label-font">Trabajos</label>
+        </div>
+      </div>
+      <ng-container *ngFor="let trabajo of persona.trabajos">
+        <div class="light-row">
+          <div class="col-md-12">
+            <label class="font data-font">{{trabajo}}</label>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="col-md-6">
+      <div class="row" style="padding: 0px">
+        <div class="col-md-12">    
+          <div class="row" style="padding: 0px">
+            <div class="col-md-12" *ngIf="persona.habilidades!.length > 0">    
+              <div class="row">
+                <div class="col-md-12">
+                  <label class="font label-font">Habilidades</label>
+                </div>
+              </div>
+              <ng-container *ngFor="let habilidad of persona.habilidades">
+                <div class="light-row">
+                  <div class="col-md-12">
+                    <label class="font data-font">{{habilidad}}</label>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">    
+          <div class="row">
+            <div class="col-md-12" *ngIf="persona.intereses!.length > 0">    
+              <div class="row">
+                <div class="col-md-12">
+                  <label class="font label-font">Intereses</label>
+                </div>
+              </div>
+              <ng-container *ngFor="let interes of persona.intereses">
+                <div class="light-row">
+                  <div class="col-md-12">
+                    <label class="font data-font">{{interes}}</label>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
